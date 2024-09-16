@@ -24,16 +24,17 @@ body {
 .calendar-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Mantiene 4 columnas en pantallas pequeñas */
-    grid-gap: 10px;
+    grid-gap: 5px; /* Ajusta el espacio entre los bloques */
     margin: 20px auto;
     width: 80%;
     min-height: 100vh; /* Asegura que el contenedor ocupe al menos la altura de la ventana */
+    max-width: 1200px; /* Limita el ancho máximo del contenedor */
 }
 
 .day {
     background-color: #e0e0e0;
-    padding: 20px;
-    font-size: 24px;
+    padding: 10px; /* Ajusta el padding para que los bloques sean más pequeños */
+    font-size: 16px; /* Ajusta el tamaño del texto para pantallas grandes */
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
@@ -41,6 +42,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
 }
 
 .day:hover {
@@ -64,18 +66,51 @@ body {
 /* Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
     .calendar-container {
-        grid-template-columns: repeat(4, 1fr); /* 4 columnas en pantallas medianas */
+        grid-template-columns: repeat(4, 1fr); /* Mantiene 4 columnas en pantallas medianas */
     }
 
     .day {
-        font-size: 18px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
-        padding: 15px; /* Ajusta el padding para que no sea demasiado grande */
+        font-size: 14px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
+        padding: 8px; /* Ajusta el padding para que los bloques sean más pequeños */
     }
 
     #gift-text {
         font-size: 20px; /* Ajusta el tamaño del texto del mensaje del regalo */
     }
 }
+
+@media (max-width: 480px) {
+    .calendar-container {
+        grid-template-columns: repeat(4, 1fr); /* Mantiene 4 columnas en pantallas pequeñas */
+        grid-gap: 5px; /* Reduce el espacio entre los bloques */
+    }
+
+    .day {
+        font-size: 12px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
+        padding: 5px; /* Ajusta el padding para pantallas más pequeñas */
+    }
+
+    #gift-text {
+        font-size: 18px; /* Ajusta el tamaño del texto del mensaje del regalo */
+    }
+}
+
+@media (max-width: 320px) {
+    .calendar-container {
+        grid-template-columns: repeat(4, 1fr); /* Mantiene 4 columnas en pantallas extremadamente pequeñas */
+        grid-gap: 3px; /* Reduce aún más el espacio entre los bloques */
+    }
+
+    .day {
+        font-size: 10px; /* Ajusta el tamaño del texto en pantallas extremadamente pequeñas */
+        padding: 3px; /* Ajusta el padding para pantallas extremadamente pequeñas */
+    }
+
+    #gift-text {
+        font-size: 16px; /* Ajusta el tamaño del texto del mensaje del regalo */
+    }
+}
+
 
 @media (max-width: 480px) {
     .calendar-container {
@@ -132,32 +167,20 @@ body {
 
     <div id="adviento">
         <h2>Calendario de Adviento de Sorpresas para Alba 🗿</h2>
-        <div class="calendar-container">
-            <div class="day" onclick="revealGift(1)">1</div>
-            <div class="day" onclick="revealGift(2)">2</div>
-            <div class="day" onclick="revealGift(3)">3</div>
-            <div class="day" onclick="revealGift(4)">4</div>
-            <div class="day" onclick="revealGift(5)">5</div>
-            <div class="day" onclick="revealGift(6)">6</div>
-            <div class="day" onclick="revealGift(7)">7</div>
-            <div class="day" onclick="revealGift(8)">8</div>
-            <div class="day" onclick="revealGift(9)">9</div>
-            <div class="day" onclick="revealGift(10)">10</div>
-            <div class="day" onclick="revealGift(11)">11</div>
-            <div class="day" onclick="revealGift(12)">12</div>
-            <div class="day" onclick="revealGift(13)">13</div>
-            <div class="day" onclick="revealGift(14)">14</div>
-            <div class="day" onclick="revealGift(15)">15</div>
-            <div class="day" onclick="revealGift(16)">16</div>
-            <div class="day" onclick="revealGift(17)">17</div>
-            <div class="day" onclick="revealGift(18)">18</div>
-            <div class="day" onclick="revealGift(19)">19</div>
-            <div class="day" onclick="revealGift(20)">20</div>
-            <div class="day" onclick="revealGift(21)">21</div>
-            <div class="day" onclick="revealGift(22)">22</div>
-            <div class="day" onclick="revealGift(23)">23</div>
-            <div class="day" onclick="revealGift(24)">24</div>
-        </div>
+       <div class="calendar-container">
+    <div class="day">1</div>
+    <div class="day">2</div>
+    <div class="day">3</div>
+    <div class="day">4</div>
+    <div class="day">5</div>
+    <div class="day">6</div>
+    <div class="day">7</div>
+    <div class="day">8</div>
+    <div class="day">9</div>
+    <div class="day">10</div>
+    <div class="day">11</div>
+    <div class="day">12</div>
+</div>
         <div id="gift-message" class="hidden">
             <p id="gift-text"></p>
         </div>
@@ -182,18 +205,6 @@ body {
                 10: "Día 10: Una sorpresa digital.",
                 11: "Día 11: Un pequeño obsequio que te encantará.",
                 12: "Día 12: Algo único, solo para ti.",
-                13: "Día 13: Un recuerdo para guardar siempre.",
-                14: "Día 14: Un gesto lleno de cariño.",
-                15: "Día 15: Algo que te ayudará a disfrutar más.",
-                16: "Día 16: Un mensaje que te sacará una sonrisa.",
-                17: "Día 17: Un detalle inesperado.",
-                18: "Día 18: Un obsequio creativo.",
-                19: "Día 19: Algo para ti y solo para ti.",
-                20: "Día 20: Una sorpresa navideña.",
-                21: "Día 21: Un detalle cálido y especial.",
-                22: "Día 22: Una pequeña joya para tu día.",
-                23: "Día 23: Algo que hará tu día más brillante.",
-                24: "Día 24: El mejor regalo, ¡felices fiestas!"
             };
 
             if (gifts[day]) {
