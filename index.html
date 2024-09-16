@@ -22,17 +22,14 @@
         }
 
         #adviento {
-            background-color: #ffffff; /* Fondo blanco para el contenedor del calendario y el título */
             padding: 20px;
-            border-radius: 10px; /* Bordes redondeados para el contenedor */
+            border-radius: 10px; /* Bordes redondeados para el contenedor del calendario */
+            background-color: #ffffff; /* Fondo blanco solo para el calendario */
             display: inline-block; /* Ajusta el tamaño del contenedor según su contenido */
         }
 
         h2 {
-            background-color: #ffffff; /* Fondo blanco para el título */
-            padding: 10px;
-            border-radius: 5px; /* Bordes redondeados para el título */
-            margin: 0;
+            margin: 20px 0; /* Espaciado para el título */
             font-size: 24px; /* Ajusta el tamaño del texto del título */
         }
 
@@ -40,9 +37,7 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr); /* Mantiene 4 columnas en pantallas pequeñas */
             grid-gap: 5px; /* Ajusta el espacio entre los bloques */
-            margin: 20px auto;
-            width: 80%;
-            max-width: 1200px; /* Limita el ancho máximo del contenedor */
+            width: 100%;
             box-sizing: border-box; /* Asegura que el padding y el borde no afecten el ancho total */
         }
 
@@ -67,7 +62,7 @@
         #gift-message {
             margin-top: 20px;
             padding: 10px;
-            background-color: #ffffff; /* Fondo blanco detrás del texto */
+            background-color: #ffffff; /* Fondo blanco detrás del texto del mensaje */
             border-radius: 5px;
             display: inline-block;
             overflow: hidden; /* Para ocultar el texto que no cabe en el área del contenedor */
