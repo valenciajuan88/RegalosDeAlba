@@ -5,217 +5,164 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendario de Adviento Personalizado</title>
     <style>
-   html, body {
-    height: 100%; /* Asegura que el body ocupe toda la altura de la ventana */
-    margin: 0;
-    padding: 0;
-}
+        html, body {
+            height: 100%; /* Asegura que el body ocupe toda la altura de la ventana */
+            margin: 0;
+            padding: 0;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background-image: url('images.jpg'); /* Ruta a la imagen */
-    background-size: cover; /* Asegura que la imagen cubra toda el área del fondo */
-    background-position: center; /* Centra la imagen de fondo */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-attachment: fixed; /* Mantiene la imagen fija en el fondo */
-    text-align: center;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('images.jpg'); /* Ruta a la imagen */
+            background-size: cover; /* Asegura que la imagen cubra toda el área del fondo */
+            background-position: center; /* Centra la imagen de fondo */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            background-attachment: fixed; /* Mantiene la imagen fija en el fondo */
+            text-align: center;
+        }
 
-.calendar-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Mantiene 4 columnas en pantallas pequeñas */
-    grid-gap: 5px; /* Ajusta el espacio entre los bloques */
-    margin: 20px auto;
-    width: 80%;
-    min-height: 100vh; /* Asegura que el contenedor ocupe al menos la altura de la ventana */
-    max-width: 1200px; /* Limita el ancho máximo del contenedor */
-}
+        .calendar-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Mantiene 4 columnas en pantallas pequeñas */
+            grid-gap: 5px; /* Ajusta el espacio entre los bloques */
+            margin: 20px auto;
+            width: 80%;
+            max-width: 1200px; /* Limita el ancho máximo del contenedor */
+        }
 
-.day {
-    background-color: #e0e0e0;
-    padding: 10px; /* Ajusta el padding para que los bloques sean más pequeños */
-    font-size: 16px; /* Ajusta el tamaño del texto para pantallas grandes */
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
-}
+        .day {
+            background-color: #e0e0e0;
+            padding: 10px; /* Ajusta el padding para que los bloques sean más pequeños */
+            font-size: 16px; /* Ajusta el tamaño del texto para pantallas grandes */
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
+        }
 
-.day:hover {
-    background-color: #ff9800;
-}
+        .day:hover {
+            background-color: #ff9800;
+        }
 
-.hidden {
-    display: none;
-}
+        .hidden {
+            display: none;
+        }
 
-#gift-message {
-    margin-top: 20px;
-}
+        #gift-message {
+            margin-top: 20px;
+        }
 
-#gift-text {
-    font-size: 24px;
-    font-weight: bold;
-    color: #4CAF50;
-}
+        #gift-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
 
-/* Media Queries para dispositivos móviles */
-@media (max-width: 768px) {
-    .calendar-container {
-        grid-template-columns: repeat(4, 1fr); /* Mantiene 4 columnas en pantallas medianas */
-    }
+        /* Media Queries para dispositivos móviles */
+        @media (max-width: 768px) {
+            .day {
+                font-size: 14px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
+                padding: 8px; /* Ajusta el padding para que los bloques sean más pequeños */
+            }
 
-    .day {
-        font-size: 14px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
-        padding: 8px; /* Ajusta el padding para que los bloques sean más pequeños */
-    }
+            #gift-text {
+                font-size: 20px; /* Ajusta el tamaño del texto del mensaje del regalo */
+            }
+        }
 
-    #gift-text {
-        font-size: 20px; /* Ajusta el tamaño del texto del mensaje del regalo */
-    }
-}
+        @media (max-width: 480px) {
+            .calendar-container {
+                grid-gap: 8px; /* Reduce el espacio entre los bloques */
+            }
 
-@media (max-width: 480px) {
-    .calendar-container {
-        grid-template-columns: repeat(4, 1fr); /* Mantiene 4 columnas en pantallas pequeñas */
-        grid-gap: 5px; /* Reduce el espacio entre los bloques */
-    }
+            .day {
+                font-size: 12px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
+                padding: 5px; /* Ajusta el padding para pantallas más pequeñas */
+            }
 
-    .day {
-        font-size: 12px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
-        padding: 5px; /* Ajusta el padding para pantallas más pequeñas */
-    }
+            #gift-text {
+                font-size: 18px; /* Ajusta el tamaño del texto del mensaje del regalo */
+            }
+        }
 
-    #gift-text {
-        font-size: 18px; /* Ajusta el tamaño del texto del mensaje del regalo */
-    }
-}
+        @media (max-width: 320px) {
+            .calendar-container {
+                grid-gap: 5px; /* Reduce aún más el espacio entre los bloques */
+            }
 
-@media (max-width: 320px) {
-    .calendar-container {
-        grid-template-columns: repeat(4, 1fr); /* Mantiene 4 columnas en pantallas extremadamente pequeñas */
-        grid-gap: 3px; /* Reduce aún más el espacio entre los bloques */
-    }
+            .day {
+                font-size: 10px; /* Ajusta el tamaño del texto en pantallas extremadamente pequeñas */
+                padding: 3px; /* Ajusta el padding para pantallas extremadamente pequeñas */
+            }
 
-    .day {
-        font-size: 10px; /* Ajusta el tamaño del texto en pantallas extremadamente pequeñas */
-        padding: 3px; /* Ajusta el padding para pantallas extremadamente pequeñas */
-    }
-
-    #gift-text {
-        font-size: 16px; /* Ajusta el tamaño del texto del mensaje del regalo */
-    }
-}
-
-
-@media (max-width: 480px) {
-    .calendar-container {
-        grid-template-columns: repeat(4, 1fr); /* Mantiene 4 columnas en pantallas pequeñas */
-        grid-gap: 8px; /* Reduce el espacio entre los bloques */
-    }
-
-    .day {
-        font-size: 14px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
-        padding: 10px; /* Ajusta el padding para pantallas más pequeñas */
-    }
-
-    #gift-text {
-        font-size: 18px; /* Ajusta el tamaño del texto del mensaje del regalo */
-    }
-}
-
-@media (max-width: 320px) {
-    .calendar-container {
-        grid-template-columns: repeat(4, 1fr); /* Mantiene 4 columnas en pantallas extremadamente pequeñas */
-        grid-gap: 5px; /* Reduce aún más el espacio entre los bloques */
-    }
-
-    .day {
-        font-size: 12px; /* Ajusta el tamaño del texto en pantallas extremadamente pequeñas */
-        padding: 5px; /* Ajusta el padding para pantallas extremadamente pequeñas */
-    }
-
-    #gift-text {
-        font-size: 16px; /* Ajusta el tamaño del texto del mensaje del regalo */
-    }
-}
-
-@media (max-width: 320px) {
-    .calendar-container {
-        grid-template-columns: repeat(4, 1fr); /* Mantiene 4 columnas en pantallas extremadamente pequeñas */
-        grid-gap: 5px; /* Reduce aún más el espacio entre los bloques */
-    }
-
-    .day {
-        font-size: 12px; /* Ajusta el tamaño del texto en pantallas extremadamente pequeñas */
-        padding: 5px; /* Ajusta el padding para pantallas extremadamente pequeñas */
-    }
-
-    #gift-text {
-        font-size: 16px; /* Ajusta el tamaño del texto del mensaje del regalo */
-    }
-}
-
-
+            #gift-text {
+                font-size: 16px; /* Ajusta el tamaño del texto del mensaje del regalo */
+            }
+        }
     </style>
 </head>
 <body>
-
     <div id="adviento">
         <h2>Calendario de Adviento de Sorpresas para Alba 🗿</h2>
-       <div class="calendar-container">
-    <div class="day">1</div>
-    <div class="day">2</div>
-    <div class="day">3</div>
-    <div class="day">4</div>
-    <div class="day">5</div>
-    <div class="day">6</div>
-    <div class="day">7</div>
-    <div class="day">8</div>
-    <div class="day">9</div>
-    <div class="day">10</div>
-    <div class="day">11</div>
-    <div class="day">12</div>
-</div>
+        <div class="calendar-container">
+            <div class="day" data-day="1">1</div>
+            <div class="day" data-day="2">2</div>
+            <div class="day" data-day="3">3</div>
+            <div class="day" data-day="4">4</div>
+            <div class="day" data-day="5">5</div>
+            <div class="day" data-day="6">6</div>
+            <div class="day" data-day="7">7</div>
+            <div class="day" data-day="8">8</div>
+            <div class="day" data-day="9">9</div>
+            <div class="day" data-day="10">10</div>
+            <div class="day" data-day="11">11</div>
+            <div class="day" data-day="12">12</div>
+        </div>
         <div id="gift-message" class="hidden">
             <p id="gift-text"></p>
         </div>
     </div>
 
     <script>
-        function revealGift(day) {
-            var giftText = document.getElementById('gift-text');
-            var giftMessage = document.getElementById('gift-message');
+        document.addEventListener('DOMContentLoaded', function() {
+            const days = document.querySelectorAll('.day');
+            const giftMessage = document.getElementById('gift-message');
+            const giftText = document.getElementById('gift-text');
 
-            // Lista de mensajes personalizados para cada día
-            var gifts = {
-                1: "Día 1: Aquí tienes tu primer regalo, ¡una tarjeta especial!",
-                2: "Día 2: Hoy te espera una sorpresa dulce.",
-                3: "Día 3: Algo útil para tu día a día.",
-                4: "Día 4: Un pequeño detalle hecho a mano.",
-                5: "Día 5: Un regalo sorpresa...",
-                6: "Día 6: Un mensaje especial para alegrarte el día.",
-                7: "Día 7: Una experiencia inolvidable.",
-                8: "Día 8: Un momento de relax.",
-                9: "Día 9: Algo que te hará sonreír.",
-                10: "Día 10: Una sorpresa digital.",
-                11: "Día 11: Un pequeño obsequio que te encantará.",
-                12: "Día 12: Algo único, solo para ti.",
-            };
+            days.forEach(day => {
+                day.addEventListener('click', function() {
+                    const dayNumber = this.getAttribute('data-day');
+                    const gifts = {
+                        1: "Día 1: Aquí tienes tu primer regalo, ¡una tarjeta especial!",
+                        2: "Día 2: Hoy te espera una sorpresa dulce.",
+                        3: "Día 3: Algo útil para tu día a día.",
+                        4: "Día 4: Un pequeño detalle hecho a mano.",
+                        5: "Día 5: Un regalo sorpresa...",
+                        6: "Día 6: Un mensaje especial para alegrarte el día.",
+                        7: "Día 7: Una experiencia inolvidable.",
+                        8: "Día 8: Un momento de relax.",
+                        9: "Día 9: Algo que te hará sonreír.",
+                        10: "Día 10: Una sorpresa digital.",
+                        11: "Día 11: Un pequeño obsequio que te encantará.",
+                        12: "Día 12: Algo único, solo para ti.",
+                    };
 
-            if (gifts[day]) {
-                giftText.innerHTML = gifts[day];
-            } else {
-                giftText.innerHTML = "Este día aún no tiene regalo. ¡Espera la sorpresa!";
-            }
+                    giftText.textContent = gifts[dayNumber] || "Este día aún no tiene regalo. ¡Espera la sorpresa!";
+                    giftMessage.classList.remove('hidden');
+                });
+            });
 
-            giftMessage.classList.remove('hidden');
-        }
+            document.addEventListener('click', function(event) {
+                if (!event.target.classList.contains('day') && !giftMessage.contains(event.target)) {
+                    giftMessage.classList.add('hidden');
+                }
+            });
+        });
     </script>
-
 </body>
 </html>
+
