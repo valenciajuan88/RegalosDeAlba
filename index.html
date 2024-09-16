@@ -27,6 +27,7 @@
             grid-gap: 5px; /* Ajusta el espacio entre los bloques */
             margin: 20px auto;
             width: 80%;
+            min-height: 100vh; /* Asegura que el contenedor ocupe al menos la altura de la ventana */
             max-width: 1200px; /* Limita el ancho máximo del contenedor */
         }
 
@@ -48,26 +49,38 @@
             background-color: #ff9800;
         }
 
-        .hidden {
-            display: none;
-        }
-
         #gift-message {
             margin-top: 20px;
-            padding: 10px; /* Añade espacio alrededor del texto */
-            background-color: #ffffff; /* Fondo blanco para el mensaje */
-            border-radius: 5px; /* Opcional: bordes redondeados para el contenedor */
-            display: inline-block; /* Opcional: ajusta el contenedor al tamaño del contenido */
+            padding: 10px;
+            background-color: #ffffff; /* Fondo blanco detrás del texto */
+            border-radius: 5px;
+            display: inline-block;
+            overflow: hidden; /* Para ocultar el texto que no cabe en el área del contenedor */
+            white-space: nowrap; /* Para que el texto no se divida en varias líneas */
         }
 
         #gift-text {
             font-size: 24px;
             font-weight: bold;
-            color: #000000; /* Texto negro */
+            color: #000000; /* Color negro del texto */
+            display: inline-block; /* Para aplicar el efecto de animación de escritura */
+            border-right: 3px solid #000000; /* Simula el cursor de escritura */
+            animation: typing 2s steps(30, end) forwards; /* Ajusta el tiempo y pasos según lo necesites */
+            /* Para hacer la animación de escritura más suave */
+            white-space: pre; /* Mantiene los espacios y saltos de línea del texto */
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
         }
 
         /* Media Queries para dispositivos móviles */
         @media (max-width: 768px) {
+            .calendar-container {
+                grid-template-columns: repeat(4, 1fr); /* Mantiene 4 columnas en pantallas medianas */
+            }
+
             .day {
                 font-size: 14px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
                 padding: 8px; /* Ajusta el padding para que los bloques sean más pequeños */
@@ -80,12 +93,13 @@
 
         @media (max-width: 480px) {
             .calendar-container {
+                grid-template-columns: repeat(4, 1fr); /* Mantiene 4 columnas en pantallas pequeñas */
                 grid-gap: 8px; /* Reduce el espacio entre los bloques */
             }
 
             .day {
-                font-size: 12px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
-                padding: 5px; /* Ajusta el padding para pantallas más pequeñas */
+                font-size: 14px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
+                padding: 10px; /* Ajusta el padding para pantallas más pequeñas */
             }
 
             #gift-text {
@@ -95,12 +109,13 @@
 
         @media (max-width: 320px) {
             .calendar-container {
+                grid-template-columns: repeat(4, 1fr); /* Mantiene 4 columnas en pantallas extremadamente pequeñas */
                 grid-gap: 5px; /* Reduce aún más el espacio entre los bloques */
             }
 
             .day {
-                font-size: 10px; /* Ajusta el tamaño del texto en pantallas extremadamente pequeñas */
-                padding: 3px; /* Ajusta el padding para pantallas extremadamente pequeñas */
+                font-size: 12px; /* Ajusta el tamaño del texto en pantallas extremadamente pequeñas */
+                padding: 5px; /* Ajusta el padding para pantallas extremadamente pequeñas */
             }
 
             #gift-text {
@@ -110,6 +125,7 @@
     </style>
 </head>
 <body>
+
     <div id="adviento">
         <h2>Calendario de Adviento de Sorpresas para Alba 🗿</h2>
         <div class="calendar-container">
@@ -156,6 +172,12 @@
                     };
 
                     giftText.textContent = gifts[dayNumber] || "Este día aún no tiene regalo. ¡Espera la sorpresa!";
+
+                    // Reiniciar la animación
+                    giftText.style.animation = 'none';
+                    giftText.offsetHeight; // Trigger reflow
+                    giftText.style.animation = 'typing 2s steps(30, end) forwards';
+
                     giftMessage.classList.remove('hidden');
                 });
             });
@@ -167,6 +189,8 @@
             });
         });
     </script>
+
 </body>
 </html>
+
 
