@@ -67,18 +67,18 @@
             border-radius: 5px;
             display: inline-block;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra sutil para un mejor efecto */
-            overflow-wrap: break-word; /* Permite que el texto largo se ajuste a varias líneas */
             max-width: 100%; /* Evita que el contenedor del mensaje se estire más allá del ancho de la pantalla */
+            overflow: hidden; /* Oculta cualquier contenido que se desborde */
         }
 
         #gift-text {
             font-size: 24px;
             font-weight: bold;
             color: #000000; /* Color negro del texto */
+            white-space: pre-wrap; /* Mantiene los espacios y saltos de línea del texto */
             display: inline-block; /* Para aplicar el efecto de animación de escritura */
             border-right: 3px solid #000000; /* Simula el cursor de escritura */
             animation: typing 2s steps(30, end) forwards; /* Ajusta el tiempo y pasos según lo necesites */
-            white-space: pre-wrap; /* Mantiene los espacios y saltos de línea del texto */
         }
 
         @keyframes typing {
@@ -203,6 +203,7 @@
 
 </body>
 </html>
+
 
 
 
