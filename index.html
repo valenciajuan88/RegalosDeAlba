@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendario de Adviento Personalizado</title>
     <style>
-       body {
+      body {
     font-family: Arial, sans-serif;
     background-image: url('images.jpg'); /* Ruta a la imagen */
     background-size: cover; /* Asegura que la imagen cubra toda el área del fondo */
@@ -22,7 +22,7 @@ h2 {
 
 .calendar-container {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr); /* 6 columnas en pantallas grandes */
     grid-gap: 10px;
     margin: 20px auto;
     width: 80%;
@@ -36,6 +36,9 @@ h2 {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .day:hover {
@@ -55,6 +58,38 @@ h2 {
     font-weight: bold;
     color: #4CAF50;
 }
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .calendar-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas medianas */
+    }
+
+    .day {
+        font-size: 18px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
+        padding: 15px; /* Ajusta el padding para que no sea demasiado grande */
+    }
+
+    #gift-text {
+        font-size: 20px; /* Ajusta el tamaño del texto del mensaje del regalo */
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas muy pequeñas */
+    }
+
+    .day {
+        font-size: 16px; /* Ajusta el tamaño del texto en pantallas muy pequeñas */
+        padding: 10px; /* Ajusta el padding para pantallas muy pequeñas */
+    }
+
+    #gift-text {
+        font-size: 18px; /* Ajusta el tamaño del texto del mensaje del regalo */
+    }
+}
+
 
 /* Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
