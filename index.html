@@ -69,6 +69,8 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra sutil para un mejor efecto */
             max-width: 100%; /* Evita que el contenedor del mensaje se estire más allá del ancho de la pantalla */
             overflow: hidden; /* Oculta cualquier contenido que se desborde */
+            position: relative;
+            white-space: pre-wrap; /* Permite que el texto use múltiples líneas */
         }
 
         #gift-text {
@@ -76,9 +78,11 @@
             font-weight: bold;
             color: #000000; /* Color negro del texto */
             white-space: pre-wrap; /* Mantiene los espacios y saltos de línea del texto */
+            overflow: hidden; /* Oculta el texto que no se ha mostrado aún */
             display: inline-block; /* Para aplicar el efecto de animación de escritura */
             border-right: 3px solid #000000; /* Simula el cursor de escritura */
-            animation: typing 2s steps(30, end) forwards; /* Ajusta el tiempo y pasos según lo necesites */
+            animation: typing 4s steps(30, end) forwards; /* Ajusta el tiempo y pasos según lo necesites */
+            width: 0; /* Comienza con un ancho de 0 */
         }
 
         @keyframes typing {
@@ -187,7 +191,7 @@
                     // Reiniciar la animación
                     giftText.style.animation = 'none';
                     giftText.offsetHeight; // Trigger reflow
-                    giftText.style.animation = 'typing 2s steps(30, end) forwards';
+                    giftText.style.animation = 'typing 4s steps(30, end) forwards';
 
                     giftMessage.classList.remove('hidden');
                 });
