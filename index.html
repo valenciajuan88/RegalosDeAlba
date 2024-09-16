@@ -26,6 +26,7 @@
             border-radius: 10px; /* Bordes redondeados para el contenedor del calendario */
             background-color: #ffffff; /* Fondo blanco solo para el calendario */
             display: inline-block; /* Ajusta el tamaño del contenedor según su contenido */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra sutil para un mejor efecto */
         }
 
         h2 {
@@ -65,8 +66,9 @@
             background-color: #ffffff; /* Fondo blanco detrás del texto del mensaje */
             border-radius: 5px;
             display: inline-block;
-            overflow: hidden; /* Para ocultar el texto que no cabe en el área del contenedor */
-            white-space: nowrap; /* Para que el texto no se divida en varias líneas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra sutil para un mejor efecto */
+            overflow-wrap: break-word; /* Permite que el texto largo se ajuste a varias líneas */
+            max-width: 100%; /* Evita que el contenedor del mensaje se estire más allá del ancho de la pantalla */
         }
 
         #gift-text {
@@ -76,7 +78,7 @@
             display: inline-block; /* Para aplicar el efecto de animación de escritura */
             border-right: 3px solid #000000; /* Simula el cursor de escritura */
             animation: typing 2s steps(30, end) forwards; /* Ajusta el tiempo y pasos según lo necesites */
-            white-space: pre; /* Mantiene los espacios y saltos de línea del texto */
+            white-space: pre-wrap; /* Mantiene los espacios y saltos de línea del texto */
         }
 
         @keyframes typing {
@@ -201,6 +203,7 @@
 
 </body>
 </html>
+
 
 
 
