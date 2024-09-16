@@ -21,31 +21,23 @@
             text-align: center;
         }
 
-        #adviento {
-            padding: 20px;
-            border-radius: 10px; /* Bordes redondeados para el contenedor del calendario */
-            background-color: #ffffff; /* Fondo blanco solo para el calendario */
-            display: inline-block; /* Ajusta el tamaño del contenedor según su contenido */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra sutil para un mejor efecto */
-        }
-
-        h2 {
-            margin: 20px 0; /* Espaciado para el título */
-            font-size: 24px; /* Ajusta el tamaño del texto del título */
-        }
-
         .calendar-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr); /* Mantiene 4 columnas en pantallas pequeñas */
             grid-gap: 5px; /* Ajusta el espacio entre los bloques */
-            width: 100%;
-            box-sizing: border-box; /* Asegura que el padding y el borde no afecten el ancho total */
+            margin: 20px auto;
+            width: 80%;
+            min-height: 100vh; /* Asegura que el contenedor ocupe al menos la altura de la ventana */
+            max-width: 1200px; /* Limita el ancho máximo del contenedor */
+            background-color: white; /* Fondo blanco para el calendario */
+            padding: 10px; /* Espacio interno del contenedor del calendario */
+            border-radius: 10px; /* Bordes redondeados */
         }
 
         .day {
             background-color: #e0e0e0;
-            padding: 5px; /* Ajusta el padding para que los bloques sean más pequeños */
-            font-size: 14px; /* Ajusta el tamaño del texto para pantallas grandes */
+            padding: 10px; /* Ajusta el padding para que los bloques sean más pequeños */
+            font-size: 16px; /* Ajusta el tamaño del texto para pantallas grandes */
             font-weight: bold;
             border-radius: 5px;
             cursor: pointer;
@@ -60,34 +52,24 @@
             background-color: #ff9800;
         }
 
+        .hidden {
+            display: none;
+        }
+
         #gift-message {
             margin-top: 20px;
+            background-color: white; /* Fondo blanco para el mensaje del regalo */
             padding: 10px;
-            background-color: #ffffff; /* Fondo blanco detrás del texto del mensaje */
-            border-radius: 5px;
-            display: inline-block;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra sutil para un mejor efecto */
-            max-width: 100%; /* Evita que el contenedor del mensaje se estire más allá del ancho de la pantalla */
-            overflow: hidden; /* Oculta cualquier contenido que se desborde */
-            position: relative;
-            white-space: pre-wrap; /* Permite que el texto use múltiples líneas */
+            border-radius: 10px; /* Bordes redondeados */
+            display: inline-block; /* Asegura que el mensaje tenga solo el tamaño necesario */
         }
 
         #gift-text {
             font-size: 24px;
             font-weight: bold;
-            color: #000000; /* Color negro del texto */
-            white-space: pre-wrap; /* Mantiene los espacios y saltos de línea del texto */
-            overflow: hidden; /* Oculta el texto que no se ha mostrado aún */
-            display: inline-block; /* Para aplicar el efecto de animación de escritura */
-            border-right: 3px solid #000000; /* Simula el cursor de escritura */
-            animation: typing 4s steps(30, end) forwards; /* Ajusta el tiempo y pasos según lo necesites */
-            width: 0; /* Comienza con un ancho de 0 */
-        }
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
+            color: black; /* Texto negro */
+            white-space: pre-wrap; /* Mantiene los espacios y saltos de línea */
+            word-wrap: break-word; /* Ajusta el texto largo */
         }
 
         /* Media Queries para dispositivos móviles */
@@ -97,7 +79,7 @@
             }
 
             .day {
-                font-size: 12px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
+                font-size: 14px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
                 padding: 8px; /* Ajusta el padding para que los bloques sean más pequeños */
             }
 
@@ -113,8 +95,8 @@
             }
 
             .day {
-                font-size: 10px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
-                padding: 6px; /* Ajusta el padding para pantallas más pequeñas */
+                font-size: 12px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
+                padding: 5px; /* Ajusta el padding para pantallas más pequeñas */
             }
 
             #gift-text {
@@ -129,8 +111,8 @@
             }
 
             .day {
-                font-size: 8px; /* Ajusta el tamaño del texto en pantallas extremadamente pequeñas */
-                padding: 4px; /* Ajusta el padding para pantallas extremadamente pequeñas */
+                font-size: 10px; /* Ajusta el tamaño del texto en pantallas extremadamente pequeñas */
+                padding: 3px; /* Ajusta el padding para pantallas extremadamente pequeñas */
             }
 
             #gift-text {
@@ -143,19 +125,19 @@
 
     <div id="adviento">
         <h2>Calendario de Adviento de Sorpresas para Alba 🗿</h2>
-        <div class="calendar-container">
-            <div class="day" data-day="1">1</div>
-            <div class="day" data-day="2">2</div>
-            <div class="day" data-day="3">3</div>
-            <div class="day" data-day="4">4</div>
-            <div class="day" data-day="5">5</div>
-            <div class="day" data-day="6">6</div>
-            <div class="day" data-day="7">7</div>
-            <div class="day" data-day="8">8</div>
-            <div class="day" data-day="9">9</div>
-            <div class="day" data-day="10">10</div>
-            <div class="day" data-day="11">11</div>
-            <div class="day" data-day="12">12</div>
+       <div class="calendar-container">
+            <div class="day">1</div>
+            <div class="day">2</div>
+            <div class="day">3</div>
+            <div class="day">4</div>
+            <div class="day">5</div>
+            <div class="day">6</div>
+            <div class="day">7</div>
+            <div class="day">8</div>
+            <div class="day">9</div>
+            <div class="day">10</div>
+            <div class="day">11</div>
+            <div class="day">12</div>
         </div>
         <div id="gift-message" class="hidden">
             <p id="gift-text"></p>
@@ -164,14 +146,15 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const days = document.querySelectorAll('.day');
-            const giftMessage = document.getElementById('gift-message');
-            const giftText = document.getElementById('gift-text');
-
-            days.forEach(day => {
+            var days = document.querySelectorAll('.day');
+            days.forEach(function(day) {
                 day.addEventListener('click', function() {
-                    const dayNumber = this.getAttribute('data-day');
-                    const gifts = {
+                    var dayNumber = this.innerText;
+                    var giftText = document.getElementById('gift-text');
+                    var giftMessage = document.getElementById('gift-message');
+
+                    // Lista de mensajes personalizados para cada día
+                    var gifts = {
                         1: "Día 1: Aquí tienes tu primer regalo, ¡una tarjeta especial!",
                         2: "Día 2: Hoy te espera una sorpresa dulce.",
                         3: "Día 3: Algo útil para tu día a día.",
@@ -186,12 +169,11 @@
                         12: "Día 12: Algo único, solo para ti.",
                     };
 
-                    giftText.textContent = gifts[dayNumber] || "Este día aún no tiene regalo. ¡Espera la sorpresa!";
-
-                    // Reiniciar la animación
-                    giftText.style.animation = 'none';
-                    giftText.offsetHeight; // Trigger reflow
-                    giftText.style.animation = 'typing 4s steps(30, end) forwards';
+                    if (gifts[dayNumber]) {
+                        giftText.innerHTML = gifts[dayNumber];
+                    } else {
+                        giftText.innerHTML = "Este día aún no tiene regalo. ¡Espera la sorpresa!";
+                    }
 
                     giftMessage.classList.remove('hidden');
                 });
