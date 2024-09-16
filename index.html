@@ -36,8 +36,8 @@
 
         .day {
             background-color: #e0e0e0;
-            padding: 5px; /* Ajusta el padding para que los bloques sean más pequeños */
-            font-size: 10px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
+            padding: 10px; /* Ajusta el padding para que los bloques sean más pequeños */
+            font-size: 16px; /* Ajusta el tamaño del texto en pantallas grandes */
             font-weight: bold;
             border-radius: 5px;
             cursor: pointer;
@@ -46,6 +46,9 @@
             align-items: center;
             justify-content: center;
             box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
+            width: 50px; /* Ajusta el ancho de los bloques */
+            height: 50px; /* Ajusta la altura de los bloques */
+            margin: auto; /* Centra los bloques dentro del contenedor */
         }
 
         .day:hover {
@@ -62,6 +65,7 @@
             padding: 10px;
             border-radius: 10px; /* Bordes redondeados */
             display: inline-block; /* Asegura que el mensaje tenga solo el tamaño necesario */
+            max-width: 90%; /* Asegura que el mensaje no se extienda demasiado */
         }
 
         #gift-text {
@@ -79,8 +83,10 @@
             }
 
             .day {
-                font-size: 12px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
+                font-size: 14px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
                 padding: 8px; /* Ajusta el padding para que los bloques sean más pequeños */
+                width: 40px; /* Ajusta el ancho de los bloques */
+                height: 40px; /* Ajusta la altura de los bloques */
             }
 
             #gift-text {
@@ -97,6 +103,8 @@
             .day {
                 font-size: 12px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
                 padding: 6px; /* Ajusta el padding para pantallas más pequeñas */
+                width: 35px; /* Ajusta el ancho de los bloques */
+                height: 35px; /* Ajusta la altura de los bloques */
             }
 
             #gift-text {
@@ -113,6 +121,8 @@
             .day {
                 font-size: 10px; /* Ajusta el tamaño del texto en pantallas extremadamente pequeñas */
                 padding: 4px; /* Ajusta el padding para pantallas extremadamente pequeñas */
+                width: 30px; /* Ajusta el ancho de los bloques */
+                height: 30px; /* Ajusta la altura de los bloques */
             }
 
             #gift-text {
@@ -125,7 +135,7 @@
 
     <div id="adviento">
         <h2>Calendario de Adviento de Sorpresas para Alba 🗿</h2>
-       <div class="calendar-container">
+        <div class="calendar-container">
             <div class="day">1</div>
             <div class="day">2</div>
             <div class="day">3</div>
