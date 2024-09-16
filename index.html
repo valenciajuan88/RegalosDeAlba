@@ -12,48 +12,81 @@
     background-position: center; /* Centra la imagen de fondo */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
+h2 {
+    margin-top: 20px;
+}
 
-        h2 {
-            margin-top: 20px;
-        }
+.calendar-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+    margin: 20px auto;
+    width: 80%;
+}
 
-        .calendar-container {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            grid-gap: 10px;
-            margin: 20px auto;
-            width: 80%;
-        }
+.day {
+    background-color: #e0e0e0;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-        .day {
-            background-color: #e0e0e0;
-            padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+.day:hover {
+    background-color: #ff9800;
+}
 
-        .day:hover {
-            background-color: #ff9800;
-        }
+.hidden {
+    display: none;
+}
 
-        .hidden {
-            display: none;
-        }
+#gift-message {
+    margin-top: 20px;
+}
 
-        #gift-message {
-            margin-top: 20px;
-        }
+#gift-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4CAF50;
+}
 
-        #gift-text {
-            font-size: 24px;
-            font-weight: bold;
-            color: #4CAF50;
-        }
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .calendar-container {
+        grid-template-columns: repeat(3, 1fr); /* Cambia el número de columnas en pantallas más pequeñas */
+    }
+
+    .day {
+        font-size: 18px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
+        padding: 15px; /* Ajusta el padding para que no sea demasiado grande */
+    }
+
+    #gift-text {
+        font-size: 20px; /* Ajusta el tamaño del texto del mensaje del regalo */
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar-container {
+        grid-template-columns: 1fr; /* Una sola columna para pantallas muy pequeñas */
+    }
+
+    .day {
+        font-size: 16px; /* Ajusta aún más el tamaño del texto en pantallas muy pequeñas */
+        padding: 10px; /* Ajusta el padding para pantallas muy pequeñas */
+    }
+
+    #gift-text {
+        font-size: 18px; /* Ajusta el tamaño del texto del mensaje del regalo */
+    }
+}
+
     </style>
 </head>
 <body>
