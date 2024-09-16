@@ -1,1 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario de Adviento Personalizado</title>
+    <style>
+        /* Aquí está el CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        .calendar-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-gap: 10px;
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        .day {
+            background-color: #e0e0e0;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .day:hover {
+            background-color: #ff9800;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #gift-message {
+            margin-top: 20px;
+        }
+
+        #gift-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="adviento">
+        <h2>Calendario de Adviento</h2>
+        <div class="calendar-container">
+            <div class="day" onclick="revealGift(1)">1</div>
+            <div class="day" onclick="revealGift(2)">2</div>
+            <div class="day" onclick="revealGift(3)">3</div>
+            <div class="day" onclick="revealGift(4)">4</div>
+            <div class="day" onclick="revealGift(5)">5</div>
+            <div class="day" onclick="revealGift(6)">6</div>
+            <div class="day" onclick="revealGift(7)">7</div>
+            <div class="day" onclick="revealGift(8)">8</div>
+            <div class="day" onclick="revealGift(9)">9</div>
+            <div class="day" onclick="revealGift(10)">10</div>
+            <div class="day" onclick="revealGift(11)">11</div>
+            <div class="day" onclick="revealGift(12)">12</div>
+            <div class="day" onclick="revealGift(13)">13</div>
+            <div class="day" onclick="revealGift(14)">14</div>
+            <div class="day" onclick="revealGift(15)">15</div>
+            <div class="day" onclick="revealGift(16)">16</div>
+            <div class="day" onclick="revealGift(17)">17</div>
+            <div class="day" onclick="revealGift(18)">18</div>
+            <div class="day" onclick="revealGift(19)">19</div>
+            <div class="day" onclick="revealGift(20)">20</div>
+            <div class="day" onclick="revealGift(21)">21</div>
+            <div class="day" onclick="revealGift(22)">22</div>
+            <div class="day" onclick="revealGift(23)">23</div>
+            <div class="day" onclick="revealGift(24)">24</div>
+        </div>
+        <div id="gift-message" class="hidden">
+            <p id="gift-text"></p>
+        </div>
+    </div>
+
+    <!-- Aquí está el JavaScript -->
+    <script>
+        function revealGift(day) {
+            var giftText = document.getElementById('gift-text');
+            var giftMessage = document.getElementById('gift-message');
+
+            // Lista de mensajes personalizados para cada día
+            var gifts = {
+                1: "Día 1: Aquí tienes tu primer regalo, ¡una tarjeta especial!",
+                2: "Día 2: Hoy te espera una sorpresa dulce.",
+                3: "Día 3: Algo útil para tu día a día.",
+                4: "Día 4: Un pequeño detalle hecho a mano.",
+                5: "Día 5: Un regalo sorpresa...",
+                6: "Día 6: Un mensaje especial para alegrarte el día.",
+                7: "Día 7: Una experiencia inolvidable.",
+                8: "Día 8: Un momento de relax.",
+                9: "Día 9: Algo que te hará sonreír.",
+                10: "Día 10: Una sorpresa digital.",
+                11: "Día 11: Un pequeño obsequio que te encantará.",
+                12: "Día 12: Algo único, solo para ti.",
+                13: "Día 13: Un recuerdo para guardar siempre.",
+                14: "Día 14: Un gesto lleno de cariño.",
+                15: "Día 15: Algo que te ayudará a disfrutar más.",
+                16: "Día 16: Un mensaje que te sacará una sonrisa.",
+                17: "Día 17: Un detalle inesperado.",
+                18: "Día 18: Un obsequio creativo.",
+                19: "Día 19: Algo para ti y solo para ti.",
+                20: "Día 20: Una sorpresa navideña.",
+                21: "Día 21: Un detalle cálido y especial.",
+                22: "Día 22: Una pequeña joya para tu día.",
+                23: "Día 23: Algo que hará tu día más brillante.",
+                24: "Día 24: El mejor regalo, ¡felices fiestas!"
+            };
+
+            if (gifts[day]) {
+                giftText.innerHTML = gifts[day];
+            } else {
+                giftText.innerHTML = "Este día aún no tiene regalo. ¡Espera la sorpresa!";
+            }
+
+            giftMessage.classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
 
