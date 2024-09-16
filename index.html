@@ -62,12 +62,12 @@ h2 {
 /* Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
     .calendar-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas medianas */
+        grid-template-columns: repeat(4, 1fr); /* 4 columnas en pantallas medianas */
     }
 
     .day {
         font-size: 18px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
-        padding: 10px; /* Ajusta el padding para que sea más pequeño */
+        padding: 15px; /* Ajusta el padding para que no sea demasiado grande */
     }
 
     #gift-text {
@@ -77,16 +77,33 @@ h2 {
 
 @media (max-width: 480px) {
     .calendar-container {
-        grid-template-columns: repeat(3, 1fr); /* Mantiene 3 columnas en pantallas muy pequeñas */
+        grid-template-columns: repeat(4, 1fr); /* Mantiene 4 columnas en pantallas pequeñas */
+        grid-gap: 8px; /* Reduce el espacio entre los bloques */
     }
 
     .day {
-        font-size: 14px; /* Ajusta el tamaño del texto en pantallas muy pequeñas */
-        padding: 5px; /* Ajusta el padding para pantallas muy pequeñas */
+        font-size: 14px; /* Ajusta el tamaño del texto en pantallas más pequeñas */
+        padding: 10px; /* Ajusta el padding para pantallas más pequeñas */
     }
 
     #gift-text {
         font-size: 18px; /* Ajusta el tamaño del texto del mensaje del regalo */
+    }
+}
+
+@media (max-width: 320px) {
+    .calendar-container {
+        grid-template-columns: repeat(4, 1fr); /* Mantiene 4 columnas en pantallas extremadamente pequeñas */
+        grid-gap: 5px; /* Reduce aún más el espacio entre los bloques */
+    }
+
+    .day {
+        font-size: 12px; /* Ajusta el tamaño del texto en pantallas extremadamente pequeñas */
+        padding: 5px; /* Ajusta el padding para pantallas extremadamente pequeñas */
+    }
+
+    #gift-text {
+        font-size: 16px; /* Ajusta el tamaño del texto del mensaje del regalo */
     }
 }
 
